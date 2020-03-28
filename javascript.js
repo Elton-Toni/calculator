@@ -81,7 +81,10 @@ function handleSymbol(symbol) {
       break;
 
     case '←':
-      if (buffer.length === 1) {
+      if (enteredEqual) {
+        buffer = '0';
+        runningTotal = 0;
+      } else if (buffer.length === 1) {
         buffer = '0';
       } else {
         buffer = buffer.substring(0, buffer.length - 1);
